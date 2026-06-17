@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service | Viral Content Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0A0F;--surf:#101019;--fg:#ECECF2;--mut:#8888A0;--mut-d:#55556A;
+    --bdr:rgba(255,255,255,.08);--bdr2:rgba(255,255,255,.14);
+    --blue:#1D8FEE;--blue2:#5AAFF6;--bsoft:rgba(29,143,238,.12);
+    --glow:0 0 50px rgba(29,143,238,.35);
+    --fd:'Schibsted Grotesk',sans-serif;--fb:'DM Sans',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--fg);font-family:var(--fb);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+
+  /* ── NAV ── */
+  #nav{
+    position:fixed;top:1rem;left:50%;transform:translateX(-50%);
+    width:calc(100% - 2rem);max-width:1060px;z-index:200;
+    background:rgba(10,10,15,.65);
+    backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:14px;padding:.75rem 1.5rem;
+    transition:background .3s,border-color .3s,box-shadow .3s;
+  }
+  #nav.scrolled{background:rgba(10,10,15,.92);border-color:rgba(255,255,255,.14);box-shadow:0 8px 32px rgba(0,0,0,.4)}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .nav-logo img{height:34px;display:block}
+  .nav-links{display:flex;align-items:center;gap:2rem}
+  .nav-links a{font-size:.86rem;color:var(--mut);font-weight:500;padding:.5rem .1rem;transition:color .2s}
+  .nav-links a:hover{color:var(--fg)}
+  .nav-cta{background:var(--blue);color:#fff;font-family:var(--fd);font-weight:600;font-size:.82rem;padding:.62rem 1.3rem;border-radius:100px;white-space:nowrap;transition:transform .2s,box-shadow .2s,opacity .2s;display:inline-block}
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:var(--glow);opacity:.9}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  /* ── LAYOUT ── */
+  .wrap{max-width:720px;margin:0 auto;padding:0 1.5rem}
+  .wrap-full{max-width:1140px;margin:0 auto;padding:0 1.5rem}
+  main{padding:7rem 0 6rem}
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb{display:flex;align-items:center;gap:.5rem;margin-bottom:2.5rem}
+  .breadcrumb a{font-size:.82rem;color:var(--mut);transition:color .2s}
+  .breadcrumb a:hover{color:var(--fg)}
+  .breadcrumb span{font-size:.82rem;color:var(--mut-d)}
+  .breadcrumb svg{stroke:var(--mut-d);fill:none}
+
+  /* ── CONTENT ── */
+  .page-tag{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;display:block}
+  h1{font-family:var(--fd);font-size:clamp(2rem,5vw,3rem);font-weight:800;letter-spacing:-.03em;margin-bottom:.5rem}
+  .updated{font-size:.8rem;color:var(--mut-d);margin-bottom:3rem;display:block}
+  h2{font-family:var(--fd);font-size:1.05rem;font-weight:600;color:var(--blue2);margin:2.5rem 0 .6rem}
+  p{font-size:.95rem;color:var(--mut);line-height:1.75;margin-bottom:.8rem}
+  ul{padding-left:1.4rem;margin-bottom:.8rem}
+  ul li{font-size:.95rem;color:var(--mut);line-height:1.75;margin-bottom:.3rem}
+  a.inline-link{color:var(--blue2)}
+  a.inline-link:hover{text-decoration:underline}
+
+  /* ── FOOTER ── */
+  footer{border-top:1px solid var(--bdr);padding:3.5rem 0 2rem;background:var(--surf)}
+  .foot-main{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid var(--bdr);flex-wrap:wrap}
+  .foot-brand img{height:30px;margin-bottom:.9rem}
+  .foot-co{font-family:var(--fd);font-weight:600;font-size:.9rem;margin-bottom:.5rem}
+  .foot-addr{font-size:.82rem;color:var(--mut);line-height:1.65;max-width:230px;margin-bottom:.6rem}
+  .foot-em{font-size:.82rem;color:var(--blue2);transition:opacity .2s;display:block}
+  .foot-em:hover{opacity:.75}
+  .foot-nav{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;padding-top:.3rem}
+  .foot-nav a{font-size:.86rem;color:var(--mut);transition:color .2s}
+  .foot-nav a:hover{color:var(--fg)}
+  .foot-soc{display:flex;gap:.65rem;padding-top:.3rem}
+  .fsoc{width:34px;height:34px;border:1px solid var(--bdr);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--mut);transition:.2s}
+  .fsoc:hover{border-color:var(--blue);color:var(--blue2)}
+  .fsoc svg{fill:currentColor}
+  .foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:2rem}
+  .foot-cp{font-size:.74rem;color:var(--mut-d)}
+  .foot-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+  .foot-legal a{font-size:.74rem;color:var(--mut-d);transition:color .2s}
+  .foot-legal a:hover{color:var(--mut)}
+  @media(max-width:760px){.foot-main{flex-direction:column;gap:2rem}.foot-bottom{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-row">
+    <a href="/" class="nav-logo"><img src="https://i.ibb.co/Q3mFM4Xf/image01.jpg" alt="Viral Content Media" height="34"></a>
+    <div class="nav-links">
+      <a href="/#results">Results</a>
+      <a href="/#system">System</a>
+      <a href="/#work">Work</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="/#book" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <svg width="12" height="12" viewBox="0 0 24 24" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      <span>Terms of Service</span>
+    </div>
+
+    <span class="page-tag">Legal</span>
+    <h1>Terms of Service</h1>
+    <span class="updated">Last updated: June 2026</span>
+
+    <p>By using this website or working with us, you agree to the following.</p>
+
+    <h2>Our Services</h2>
+    <p>Viral Content Media provides podcast clip editing, captioning, and content distribution. The full scope for each client is defined in a separate agreement before work begins.</p>
+
+    <h2>Ownership</h2>
+    <p>Everything we create for you is yours — once payment is received in full. Until then, Viral Content Media retains rights to all produced content.</p>
+
+    <h2>Payment</h2>
+    <p>Payment terms are outlined in your service agreement. Deliverables may be paused if payment is not received on time.</p>
+
+    <h2>Results</h2>
+    <p>Our past results are real. They are not a guarantee of your outcome. Every audience and platform performs differently. We commit to consistent quality — not specific numbers.</p>
+
+    <h2>Limitation of Liability</h2>
+    <p>Viral Content Media is not liable for any indirect or consequential losses arising from the use of our services.</p>
+
+    <h2>Termination</h2>
+    <p>Viral Content Media reserves the right to terminate services at any time for any reason, including but not limited to violations of these terms or failure to pay fees when due.</p>
+
+    <h2>Changes</h2>
+    <p>We may update these terms at any time. If we make changes, we will notify you by revising the date at the top of this page.</p>
+
+    <h2>Contact</h2>
+    <p><a class="inline-link" href="mailto:support@viralcontentmedia.net">support@viralcontentmedia.net</a></p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap-full">
+    <div class="foot-main">
+      <div class="foot-brand">
+        <img src="https://i.ibb.co/Q3mFM4Xf/image01.jpg" alt="Viral Content Media" height="30" loading="lazy">
+        <div class="foot-co">Viral Content Media</div>
+        <div class="foot-addr">Naiganj, Muradganj, Jaunpur<br>Uttar Pradesh 222001, India</div>
+        <a class="foot-em" href="mailto:harsh@viralcontentmedia.net">harsh@viralcontentmedia.net</a>
+      </div>
+      <nav class="foot-nav">
+        <a href="/#results">Results</a>
+        <a href="/#system">System</a>
+        <a href="/#work">Work</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#book">Book a Call</a>
+      </nav>
+      <div class="foot-soc">
+        <a class="fsoc" href="https://www.instagram.com/harsh.mkt/" target="_blank" title="Instagram"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58 0-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s0-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.27 8.42 2.21 8.8 2.2 12 2.2zm0 3.68A6.12 6.12 0 1018.12 12 6.12 6.12 0 0012 5.88zm0 10.1A3.98 3.98 0 1115.98 12 3.98 3.98 0 0112 15.98zM18.4 5.6a1.43 1.43 0 11-1.43-1.43A1.43 1.43 0 0118.4 5.6z"/></svg></a>
+        <a class="fsoc" href="https://www.youtube.com/@HarshAgrahariii/featured" target="_blank" title="YouTube"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.09-2.09C19.54 3.6 12 3.6 12 3.6s-7.54 0-9.41.51A3 3 0 00.5 6.2 31.2 31.2 0 000 12a31.2 31.2 0 00.5 5.8 3 3 0 002.09 2.09C4.46 20.4 12 20.4 12 20.4s7.54 0 9.41-.51a3 3 0 002.09-2.09A31.2 31.2 0 0024 12a31.2 31.2 0 00-.5-5.8zM9.6 15.6V8.4l6.27 3.6z"/></svg></a>
+        <a class="fsoc" href="https://x.com/harsh_mkt" target="_blank" title="X"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M18.24 2.25h3.31l-7.23 8.26L22.83 21.75H16.17l-4.71-6.23-5.4 6.23H2.77l7.74-8.84L2.25 2.25h6.89l4.26 5.64zM17.08 19.75h1.83L7.08 4.13H5.12z"/></svg></a>
+        <a class="fsoc" href="https://www.linkedin.com/in/harsh-agrahari-94232524b/" target="_blank" title="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56z"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-cp">&copy; 2026 Viral Content Media. All rights reserved.</div>
+      <div class="foot-legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/refund-policy">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navEl = document.getElementById('nav');
+  window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', scrollY > 40), { passive: true });
+</script>
+</body>
+</html>
